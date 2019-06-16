@@ -70,10 +70,14 @@ Edit the postgresql.conf file for both nodes/instances:
 Basically you can copy the content of these files in the repository here and paste them into the shell
 
 ready-cat-postgresql.conf
+
 [This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-postgresql.conf)
+
 ready-cat-pg_hba.conf
+
 [This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-pg_hba.conf)
 
+Or Make the changes to below files manually 
 ```
 vi $HOME/9.4-bdr/postgresql.conf
 	listen_addresses = '*' 
@@ -111,7 +115,7 @@ Now repeat above steps to the second sever
 Do not start the server unless you completed above and the second server is done
     	
 		
-If everything is ready now let us start the server
+If everything is ready now let us start borh servers
 ```
 su -l postgres
 export PATH=/usr/lib/postgresql/9.4/bin:$PATH
