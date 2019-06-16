@@ -1,9 +1,10 @@
 # Postgres-bdr
 
-From Source Code Installation
+Download Source Code Installation version PostgreSql 9.4.21 Bdr plugin 1.0.7
 
 wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && tar -xvzf REL9_4_21-1.tar.gz && rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && tar -xvzf 1.0.7.tar.gz && rm -f 1.0.7.tar.gz
 sudo apt-get -y install apt-transport-https && sudo apt-get -y install curl ca-certificates  && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
 sudo touch /etc/apt/sources.list.d/pgdg.list
 cat > /etc/apt/sources.list.d/pgdg.list <<EOF
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
