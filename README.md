@@ -13,6 +13,7 @@ I am using ```Ubuntu 18.04 LTS, Code Version: Bionic```
 Create User postgres on both servers
 
 ```
+	sudo su
   	adduser postgres
 	adduser postgres sudo 
 	sudo usermod -a -G sudo postgres
