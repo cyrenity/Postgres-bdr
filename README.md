@@ -69,8 +69,9 @@ sudo PATH=/usr/lib/postgresql/9.4/bin:"$PATH" ./configure
 Edit the postgresql.conf file for both nodes/instances:
 Basically you can copy the content of these files in the repository here and paste them into the shell
 
+ready-cat-postgresql.conf
 [This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-postgresql.conf)
-
+ready-cat-pg_hba.conf
 [This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-pg_hba.conf)
 
 ```
