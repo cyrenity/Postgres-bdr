@@ -8,6 +8,8 @@ Server-01 IP 172.16.16.71
 
 Server-02 IP 172.16.16.72
 
+I am using ```Ubuntu 18.04 LTS, Code Version: Bionic```
+
 Create User postgres on both servers
 
 ```
