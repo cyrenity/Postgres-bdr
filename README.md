@@ -1,5 +1,5 @@
 
-# Postgres-bdr
+# Implementing High available multi master (active/active) Postgres SQL Database
 Note: These instructions are allowing any IPs to access the server so I used 0.0.0.0/0 for sake of making the deployment smooth
 
 Download Source Code Installation version PostgreSql 9.4.21 Bdr plugin 1.0.7
