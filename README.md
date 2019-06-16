@@ -3,6 +3,7 @@
 Note: These instructions are allowing any IPs to access the server so I used 0.0.0.0/0 for sake of making the deployment smooth
 
 Download Source Code Installation version PostgreSql 9.4.21 Bdr plugin 1.0.7
+
 Server-01 IP 172.16.16.71
 Server-02 IP 172.16.16.72
 ```
