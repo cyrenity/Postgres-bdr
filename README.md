@@ -18,16 +18,30 @@ Create User postgres on both servers
 	sudo chown postgres:postgres /var/lib/postgresql
 	sudo usermod -d /var/lib/postgresql postgres
 ```
+
+Then switch to that postgres user 
+
+```
+	su -l postgres
+```
+
 ```
 wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && tar -xvzf REL9_4_21-1.tar.gz && rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && tar -xvzf 1.0.7.tar.gz && rm -f 1.0.7.tar.gz
 sudo apt-get -y install apt-transport-https && sudo apt-get -y install curl ca-certificates  && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 ```
+sudo su 
 sudo touch /etc/apt/sources.list.d/pgdg.list
 cat > /etc/apt/sources.list.d/pgdg.list <<EOF
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
 deb-src http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
 EOF
+
+```
+	su -l postgres
+```
+
+
 sudo apt-get update && sudo apt-get -y build-dep postgresql-9.4
 cd bdr-postgres-bdr-pg-REL9_4_21-1 && sudo ./configure --prefix=/usr/lib/postgresql/9.4 --enable-debug --with-openssl
 sudo make check
