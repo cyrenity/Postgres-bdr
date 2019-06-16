@@ -7,6 +7,17 @@ Download Source Code Installation version PostgreSql 9.4.21 Bdr plugin 1.0.7
 Server-01 IP 172.16.16.71
 
 Server-02 IP 172.16.16.72
+
+Create User postgres on both servers
+
+```
+  	adduser postgres
+	adduser postgres sudo 
+	sudo usermod -a -G sudo postgres
+	sudo mkdir -p /var/lib/postgresql
+	sudo chown postgres:postgres /var/lib/postgresql
+	sudo usermod -d /var/lib/postgresql postgres
+```
 ```
 wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && tar -xvzf REL9_4_21-1.tar.gz && rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && tar -xvzf 1.0.7.tar.gz && rm -f 1.0.7.tar.gz
 sudo apt-get -y install apt-transport-https && sudo apt-get -y install curl ca-certificates  && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -31,12 +42,7 @@ sudo PATH=/usr/lib/postgresql/9.4/bin:"$PATH" ./configure
    sudo make -j4 -s all
    sudo make -s install
 
-    adduser postgres
-	adduser postgres sudo 
-	sudo usermod -a -G sudo postgres
-	sudo mkdir -p /var/lib/postgresql
-	sudo chown postgres:postgres /var/lib/postgresql
-	sudo usermod -d /var/lib/postgresql postgres
+  
 	su -l postgres
 	export PATH=/usr/lib/postgresql/9.4/bin:$PATH
 	 mkdir -p $HOME/9.4-bdr
