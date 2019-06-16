@@ -71,7 +71,7 @@ Basically you can copy the content of these files in the repository here and pas
 
 [a link] (https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-postgresql.conf)
 
-(Postgres-bdr/ready-cat-pg_hba.conf)
+[Contribution guidelines for this project] (Postgres-bdr/ready-cat-pg_hba.conf)
 
 [a relative link] (https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-pg_hba.conf)
 
