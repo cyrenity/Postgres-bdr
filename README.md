@@ -52,7 +52,7 @@ sudo apt-get update
 
 Then Install BDR
   ```
-cd /home/ubuntu/bdr-bdr-plugin-1.0.7
+cd $HOME/bdr-bdr-plugin-1.0.7
 sudo PATH=/usr/lib/postgresql/9.4/bin:"$PATH" ./configure
    sudo make -j4 -s all
    sudo make -s install
