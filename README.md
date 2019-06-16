@@ -46,7 +46,6 @@ EOF
 
 sudo apt-get update && sudo apt-get -y build-dep postgresql-9.4
 cd bdr-postgres-bdr-pg-REL9_4_21-1 && sudo ./configure --prefix=/usr/lib/postgresql/9.4 --enable-debug --with-openssl
-sudo make check
 sudo make -j4 -s install-world
 sudo apt-get update
 ```
