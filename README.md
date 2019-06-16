@@ -5,6 +5,7 @@ Note: These instructions are allowing any IPs to access the server so I used 0.0
 Download Source Code Installation version PostgreSql 9.4.21 Bdr plugin 1.0.7
 
 Server-01 IP 172.16.16.71
+
 Server-02 IP 172.16.16.72
 ```
 wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && tar -xvzf REL9_4_21-1.tar.gz && rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && tar -xvzf 1.0.7.tar.gz && rm -f 1.0.7.tar.gz
