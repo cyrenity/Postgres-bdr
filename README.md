@@ -13,13 +13,13 @@ I am using ```Ubuntu 18.04 LTS, Code Version: Bionic```
 Create User postgres on both servers
 
 ```
-	sudo su
-  	adduser postgres
-	adduser postgres sudo 
-	sudo usermod -a -G sudo postgres
-	sudo mkdir -p /var/lib/postgresql
-	sudo chown postgres:postgres /var/lib/postgresql
-	sudo usermod -d /var/lib/postgresql postgres
+sudo su
+adduser postgres
+adduser postgres sudo 
+sudo usermod -a -G sudo postgres
+sudo mkdir -p /var/lib/postgresql
+sudo chown postgres:postgres /var/lib/postgresql
+sudo usermod -d /var/lib/postgresql postgres
 ```
 
 Then switch to that postgres user 
