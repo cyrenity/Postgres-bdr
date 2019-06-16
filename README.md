@@ -67,6 +67,12 @@ sudo PATH=/usr/lib/postgresql/9.4/bin:"$PATH" ./configure
 	
 
 Edit the postgresql.conf file for both nodes/instances:
+Basically you can copy the content of these files in the repository here and paste them into the shell
+
+[a link] (https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-postgresql.conf)
+
+[a link] (https://github.com/taher9990/Postgres-bdr/blob/master/ready-cat-pg_hba.conf)
+
 ```
 vi $HOME/9.4-bdr/postgresql.conf
 	listen_addresses = '*' 
