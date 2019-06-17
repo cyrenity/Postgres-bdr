@@ -10,6 +10,15 @@ Server-02 IP 172.16.16.72
 
 I am using ```Ubuntu 18.04 LTS, Code Version: Bionic```
 
+1-Creating postgres user and adding it to sudo group & dirctory 
+2-Configure source repositories for postgres in Ubuntu
+3-Download the source code for Postgres * BDR
+4-Adding the key for the repostery 
+5-Installing Postgres & BDR
+6-Confiugreing Postgres
+7-Configuring postgres service (look at postgres-service file in this git repository)
+8-Configuring PATH variable
+
 Create User postgres on both servers
 
 ```
