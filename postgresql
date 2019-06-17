@@ -2,19 +2,18 @@
 # Copy this file and place it in /etc/init.d
 # chkconfig: 2345 98 02
 # description: PostgreSQL RDBMS
+#execute below commands 
+#sudo ln -s /etc/init.d/postgresql /etc/rc0.d/K01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc1.d/K01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc6.d/K01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc2.d/S01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc3.d/S01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc4.d/S01postgresql
+#sudo ln -s /etc/init.d/postgresql /etc/rc5.d/S01postgresql
 
-# This is an example of a start/stop script for SysV-style init, such
-# as is used on Linux systems.  You should edit some of the variables
-# and maybe the 'echo' commands.
-#
-# Place this file at /etc/init.d/postgresql (or
-# /etc/rc.d/init.d/postgresql) and make symlinks to
-#   /etc/rc.d/rc0.d/K02postgresql
-#   /etc/rc.d/rc1.d/K02postgresql
-#   /etc/rc.d/rc2.d/K02postgresql
-#   /etc/rc.d/rc3.d/S98postgresql
-#   /etc/rc.d/rc4.d/S98postgresql
-#   /etc/rc.d/rc5.d/S98postgresql
+
+
+
 # Or, if you have chkconfig, simply:
 # chkconfig --add postgresql
 #
@@ -38,7 +37,7 @@ PGDATA="/var/lib/postgresql/9.4-bdr"
 PGUSER=postgres
 
 # Where to keep a log file
-PGLOG="$PGDATA//var/lib/postgresql/log"
+PGLOG="$PGDATA/var/lib/postgresql/log"
 
 # It's often a good idea to protect the postmaster from being killed by the
 # OOM killer (which will tend to preferentially kill the postmaster because
