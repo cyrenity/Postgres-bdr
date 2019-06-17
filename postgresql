@@ -26,6 +26,7 @@
 # contrib/start-scripts/linux
 
 ## EDIT FROM HERE
+su -l postgres -c "/usr/lib/postgresql/9.4/bin/pg_ctl -l /var/lib/postgresql/log -D /var/lib/postgresql/9.4-bdr start"
 
 # Installation prefix
 prefix=/usr/lib/postgresql/9.4/
