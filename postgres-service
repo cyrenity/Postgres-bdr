@@ -1,12 +1,13 @@
 #Loginwith sudo
 #sudo su
 #vi /etc/init.d/postgresql-service
-#Then 
+#Then copy below content ###START... and place it in above created file
 #sudo update-rc.d postgresql-service defaults
 #sudo service postgresql-service status
 #sudo service postgresql-service start
-#sudo service postgresql-service stop
-#sudo service postgresql-service restart
+
+
+####START COPYING FROM BELOW####
 
 #!/bin/bash   
 
