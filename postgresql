@@ -1,5 +1,5 @@
 #! /bin/sh
-
+# Copy this file and place it in /etc/init.d
 # chkconfig: 2345 98 02
 # description: PostgreSQL RDBMS
 
