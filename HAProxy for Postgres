@@ -1,0 +1,54 @@
+1- Installing HAProxy on Ubuntu 14.04
+```
+sudo su
+sudo add-apt-repository ppa:vbernat/haproxy-2.0
+sudo apt-get update
+apt-cache policy haproxy
+sudo apt-get install haproxy
+haproxy -v
+```
+
+2- Configuring HAProxy 
+```
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bkp
+sudo vi /etc/haproxy/haproxy.cfg
+```
+
+Then add below lines:
+
+Configure stats page 
+```
+listen stats
+        bind :8080
+    stats enable
+    mode http
+    log global
+    stats refresh 10s
+    stats hide-version
+    stats uri /haproxy?stats
+    stats auth admin:admin
+```
+
+Configuring VIP for Postgres
+```
+frontend Test_Google_Facebook_FE
+    # Only bind on 80 if you also want to listen for connections on 80
+    bind *:80
+    bind *:443
+    option tcplog
+    mode tcp
+    default_backend Test_Google_Facebook_BE
+```
+
+Configure Postgres Servers for Load balancing
+```
+backend Test_Google_Facebook_BE
+    mode tcp
+    balance roundrobin
+    option ssl-hello-chk
+    # Add an entry for each of your backend servers and their resolvable hostnames
+    server PG-01 108.177.126.113:443 check
+    server PG-02 157.240.195.35:443 check
+```
+
+Done
