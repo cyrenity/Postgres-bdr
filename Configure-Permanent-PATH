@@ -1,3 +1,4 @@
+sudo su
 export PATH=/usr/lib/postgresql/9.4/bin:$PATH
 echo $PATH
 sudo vi /etc/environment
