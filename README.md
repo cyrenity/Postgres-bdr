@@ -122,8 +122,18 @@ vi $HOME/9.4-bdr/pg_hba.conf
 	host replication bdrsync 0.0.0.0/0 password
 ```
 
-You need to set the PATH variable permenantly and to do that follow the steps in this page:
-[This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/Configure-Permanent-PATH)
+Now let us set the PATH variable permenantly 
+```
+sudo su
+export PATH=/usr/lib/postgresql/9.4/bin:$PATH
+echo $PATH
+```
+Copy the above result and paste it in below mentioned ""
+
+```
+sudo vi /etc/environment
+PATH="the output of eaho $PATH here "
+```
 
 Because we installed Postgres from source code, we need to add crontab job that will make sure the server is going to be run automaticlly upon the reboot
 ```
