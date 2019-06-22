@@ -31,11 +31,6 @@ sudo chown postgres:postgres /var/lib/postgresql
 sudo usermod -d /var/lib/postgresql postgres
 ```
 
-Then switch to that postgres user 
-
-```
-	su -l postgres
-```
 ```
 sudo su 
 sudo touch /etc/apt/sources.list.d/pgdg.list
@@ -45,16 +40,22 @@ deb-src http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
 EOF
 
 ```
+
+Then switch to that postgres user 
+
+```
+	su -l postgres
+```
+
 ```
  wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && sudo tar -xvzf REL9_4_21-1.tar.gz && sudo rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && sudo tar -xvzf 1.0.7.tar.gz && sudo rm -f 1.0.7.tar.gz
 sudo apt-get -y install apt-transport-https 
 sudo apt-get -y install curl ca-certificates
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
-	su -l postgres
+Installing Postgres repositories and dependenceis and packages
+
 ```
-
-
 sudo apt-get update && sudo apt-get -y build-dep postgresql-9.4
 cd bdr-postgres-bdr-pg-REL9_4_21-1 && sudo ./configure --prefix=/usr/lib/postgresql/9.4 --enable-debug --with-openssl
 sudo make -j4 -s install-world
@@ -120,6 +121,17 @@ vi $HOME/9.4-bdr/pg_hba.conf
 
 	host replication bdrsync 0.0.0.0/0 password
 ```
+
+You need to set the PATH variable permenantly and to do that follow the steps in this page:
+[This is an absolute link to a nested folder](https://github.com/taher9990/Postgres-bdr/blob/master/Configure-Permanent-PATH)
+
+Because we installed Postgres from source code, we need to add crontab job that will make sure the server is going to be run automaticlly upon the reboot
+```
+sudo su 
+vi /etc/crontab
+@reboot         postgres /usr/lib/postgresql/9.4/bin/pg_ctl -l /var/lib/postgresql/log -D /var/lib/postgresql/9.4-bdr start
+````
+
 Now repeat above steps to the second sever
 !!!!!!IMPORTANT!!!!!
 Do not start the server unless you completed above and the second server is done
