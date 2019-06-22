@@ -1,0 +1,6 @@
+To drop a node:
+```
+SELECT (
+bdr.remove_bdr_from_local_node(true, true)
+);
+```
