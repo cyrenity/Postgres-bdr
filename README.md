@@ -159,15 +159,31 @@ psql -c "ALTER USER bdrsync WITH PASSWORD '123';"
 ```
 
 
+Only Start server 1 "master"
+Do below configuration on Server 1
 
-
-===============ON Server 1 & 2==========================
+===============ON Server 1==========================
 ```
 createuser test_user
 createdb -O test_user test_db
 psql test_db -c 'CREATE EXTENSION btree_gist;'
 psql test_db -c 'CREATE EXTENSION bdr;'
 ```
+
+Then start Server 2 and configure it
+===============ON Server 2==========================
+```
+su -l postgres
+export PATH=/usr/lib/postgresql/9.4/bin:$PATH
+pg_ctl -l ~/log -D ~/9.4-bdr start
+psql -c "CREATE USER bdrsync superuser;"
+psql -c "ALTER USER bdrsync WITH PASSWORD '123';"
+createuser test_user
+createdb -O test_user test_db
+psql test_db -c 'CREATE EXTENSION btree_gist;'
+psql test_db -c 'CREATE EXTENSION bdr;'
+```
+
 ===============On Server 1 - Master Node Only ===============
 ```
 psql
