@@ -32,7 +32,6 @@ sudo usermod -d /var/lib/postgresql postgres
 ```
 
 ```
-sudo su 
 sudo touch /etc/apt/sources.list.d/pgdg.list
 cat > /etc/apt/sources.list.d/pgdg.list <<EOF
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
@@ -48,7 +47,10 @@ Then switch to that postgres user
 ```
 
 ```
- wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && sudo tar -xvzf REL9_4_21-1.tar.gz && sudo rm -f REL9_4_21-1.tar.gz & wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && sudo tar -xvzf 1.0.7.tar.gz && sudo rm -f 1.0.7.tar.gz
+ wget https://github.com/2ndQuadrant/bdr-postgres/archive/bdr-pg/REL9_4_21-1.tar.gz && sudo tar -xvzf REL9_4_21-1.tar.gz  
+ wget https://github.com/2ndQuadrant/bdr/archive/bdr-plugin/1.0.7.tar.gz && sudo tar -xvzf 1.0.7.tar.gz 
+ sudo rm -f REL9_4_21-1.tar.gz
+ sudo rm -f 1.0.7.tar.gz
 sudo apt-get -y install apt-transport-https 
 sudo apt-get -y install curl ca-certificates
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
