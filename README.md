@@ -115,13 +115,18 @@ vi $HOME/9.4-bdr/postgresql.conf
 ```
 vi $HOME/9.4-bdr/pg_hba.conf
 	
-	host replication bdrsync 0.0.0.0/0 password
-	host replication bdrsync 0.0.0.0/0 password
-    local   replication   postgres                  trust
-    host    replication   postgres     0.0.0.0/0 trust
-    host    replication   postgres     ::1/128      trust
+local   replication     postgres                        trust
+host    replication     postgres        127.0.0.1/32    trust
+host    replication     postgres        ::1/128         trust
 
-	host replication bdrsync 0.0.0.0/0 password
+host all all 0.0.0.0/0  password
+
+host replication postgres 192.168.122.10/32 trust
+host replication postgres 192.168.122.11/32 trust
+
+host replication bdrsync 192.168.122.10/32 password
+host replication bdrsync 192.168.122.11/32 password
+
 ```
 
 Now let us set the PATH variable permenantly 
